@@ -1,3 +1,3 @@
 #!/bin/sh
-javac *.java &&
-jar cmvf *.mf ImageGUI.jar *.class
+javac src/*.java -d . &&
+jar cmvf src/*.mf ImageGUI.jar *.class
