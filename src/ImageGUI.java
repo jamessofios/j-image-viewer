@@ -6,7 +6,9 @@ import java.awt.*;
 public class ImageGUI{
 
 	static String image;
+	
 	static Image iTest;
+	
 	static Graphics gc;
 
 	public static void setGUI() throws Exception {
