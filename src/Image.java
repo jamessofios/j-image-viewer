@@ -14,17 +14,17 @@ public class Image
 	public Image(String filename) throws Exception
 	{
 		this.read(filename);
-	}
+	} //end Image constructor
 
 	public int getWidth()
 	{
 		return this.width;
-	}
+	} //end getWidth()
 
 	public int getHeight()
 	{
 		return this.height;
-	}
+	} //end GetHeight()
 
 	public void read(String filename) throws Exception
 	{
