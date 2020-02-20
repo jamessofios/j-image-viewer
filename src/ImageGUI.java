@@ -14,7 +14,7 @@ public class ImageGUI{
 	static Graphics gc;
 
 	public static void setGUI() throws Exception {
-		
+
 		//declare main frame and window label
 		JFrame frame = new JFrame("J Image Viewer");
 
@@ -23,16 +23,16 @@ public class ImageGUI{
 		JButton bt2 = new JButton("Save");
 		JButton bt3 = new JButton("Flip X");
 		JButton bt4 = new JButton("Flip Y");
-		
+
 		//setting close operation.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		//setting layout using FlowLayout object
 		frame.setLayout(new FlowLayout());
-		
+
 		//setting size of Jframe
 		frame.setSize(900, 900);
-	
+
 		//declare a panel in the Jframe with a GBLayout
 		JPanel panel = new JPanel(new GridBagLayout());
 
@@ -48,19 +48,19 @@ public class ImageGUI{
 
 		//add btn1 to the panel at the constraint grid coordinates
 		panel.add(bt1, con);
-		
+
 		//increment the x coordinates of the constraint grid
 		con.gridx++;
-		
+
 		//add btn2 to the panel at the constraint grid coordinates
 		panel.add(bt2,con);
-		
+
 		//increment the x coordinates of the constraint grid
 		con.gridx++;
-		
+
 		//add btn3 to the panel at the constraint grid coordinates
 		panel.add(bt3,con);
-		
+
 		//increment the x coordinates of the constraint grid
 		con.gridx++;
 
@@ -119,12 +119,12 @@ public class ImageGUI{
 		});
 		return;
 	}
-	
+
 	//This defines the action of opening a file
 	public static String openFile(){
-		
+
 		//Only jpg png bmp wbmp gif files work due to limitations of javax.imageio.*;
-		
+
 		FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
 		dialog.setMode(FileDialog.LOAD);
 
@@ -138,9 +138,9 @@ public class ImageGUI{
 
 	//This defines the action of opening a file
 	public static void saveFile(){
-		
+
 		//Only jpg png bmp wbmp gif files work due to limitations of javax.imageio.*;
-		
+
 		FileDialog dialog = new FileDialog((Frame)null, "Save your file");
 		dialog.setMode(FileDialog.SAVE);
 		dialog.setVisible(true);
@@ -158,17 +158,20 @@ public class ImageGUI{
 
 		return;
 	}
-	
+
 	//main method
 	public static void main(String[] args) throws Exception {
+
 		try{
 			setGUI();
 		}
 		catch(Exception e){
+
 			e.printStackTrace();
 		}
+
 	} //end main()
-	
+
 } //end class ImageGUI
 
 

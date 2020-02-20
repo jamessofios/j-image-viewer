@@ -14,16 +14,19 @@ public class Image
 	public Image(String filename) throws Exception
 	{
 		this.read(filename);
+
 	} //end Image constructor
 
 	public int getWidth()
 	{
 		return this.width;
+
 	} //end getWidth()
 
 	public int getHeight()
 	{
 		return this.height;
+
 	} //end GetHeight()
 
 	public void read(String filename) throws Exception
@@ -40,8 +43,7 @@ public class Image
 
 		for (int row = 0; row < this.height; row++)
 		{
-			for (int col = 0; col < this.width; col++)
-				pixels[row][col] = bufImage.getRGB(col, row);
+			for (int col = 0; col < this.width; col++) pixels[row][col] = bufImage.getRGB(col, row);
 		}
 
 	} //end read()
@@ -60,12 +62,13 @@ public class Image
 		}
 
 		return bufImage;
+
 	} //end createBufferedImage()
 
 	public void flipY() {
-		
+
 		int[][] p = this.pixels;
-		
+
 		int[][] mirrored = new int[p.length][p[0].length];
 
 		for(int i=0; i < p.length ; i++) {
@@ -74,6 +77,7 @@ public class Image
 		}
 
 		pixels = mirrored;
+
 	} //end flipY()
 
 	public void flipX() {
@@ -88,6 +92,7 @@ public class Image
 		}
 
 		pixels = flipped;
+
 	}//end flipX()
 
 
@@ -100,6 +105,7 @@ public class Image
 		BufferedImage bufImage = createBufferedImage();
 
 		ImageIO.write(bufImage, ext, fileImage);
+
 	} //end write()
 
 	public void draw(Graphics gc, int x, int y)
@@ -107,6 +113,7 @@ public class Image
 		BufferedImage bufImage = createBufferedImage();
 
 		gc.drawImage(bufImage, x, y, null);
+
 	} //end draw()
 
 } //end Class Image
