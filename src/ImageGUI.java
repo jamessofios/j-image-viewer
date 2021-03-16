@@ -70,6 +70,7 @@ public class ImageGUI{
 			@Override
 			public void actionPerformed(ActionEvent e){
 				try{
+					frame.repaint();
 					image = openFile();
 					iTest = new Image(image);
 					iTest.draw(gc, 100, 100);
