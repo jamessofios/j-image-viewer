@@ -2,9 +2,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-//frame.removeall()
-//frame.remove()
-
 public class ImageGUI{
 	static String image;
 	static Image iTest;
@@ -15,8 +12,8 @@ public class ImageGUI{
 		//declare buttons and button text
 		JButton bt1 = new JButton("Open");
 		JButton bt2 = new JButton("Save");
-		JButton bt3 = new JButton("Flip X");
-		JButton bt4 = new JButton("Flip Y");
+		JButton bt3 = new JButton("Flip");
+		JButton bt4 = new JButton("Mirror");
 
 		//setting close operation.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +22,7 @@ public class ImageGUI{
 		frame.setLayout(new FlowLayout());
 
 		//setting size of Jframe
-		frame.setSize(900, 900);
+		frame.setSize(1000, 700);
 
 		//declare a panel in the Jframe with a GBLayout
 		JPanel panel = new JPanel(new GridBagLayout());
@@ -73,7 +70,7 @@ public class ImageGUI{
 					frame.repaint();
 					image = openFile();
 					iTest = new Image(image);
-					iTest.draw(gc, 100, 100);
+					iTest.draw(gc, 0, 100, 800, 600);
 				}
 				catch(Exception ex){
 					ex.printStackTrace();
@@ -90,20 +87,19 @@ public class ImageGUI{
 		bt3.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				iTest.flipX();
-				iTest.draw(gc, 100, 100);
+				iTest.draw(gc, 0, 100, 800, 600);
 			}
 		});
 
 		bt4.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				iTest.flipY();
-				iTest.draw(gc, 100, 100);
+				iTest.draw(gc, 0, 100, 800, 600);
 			}
 		});
 		return;
 	}
 
-	//This defines the action of opening a file
 	public static String openFile(){
 		//Only jpg png bmp wbmp gif files work due to limitations of javax.imageio.*;
 		FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
@@ -114,9 +110,7 @@ public class ImageGUI{
 		return file;
 	}
 
-	//This defines the action of opening a file
 	public static void saveFile(){
-		//Only jpg png bmp wbmp gif files work due to limitations of javax.imageio.*;
 		FileDialog dialog = new FileDialog((Frame)null, "Save your file");
 		dialog.setMode(FileDialog.SAVE);
 		dialog.setVisible(true);
@@ -128,7 +122,6 @@ public class ImageGUI{
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return;
 	}
 
 	public static void main(String[] args) throws Exception{

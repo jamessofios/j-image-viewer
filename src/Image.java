@@ -88,4 +88,9 @@ public class Image
 		BufferedImage bufImage = createBufferedImage();
 		gc.drawImage(bufImage, x, y, null);
 	}
+	
+	public void draw(Graphics gc, int x, int y, int l, int w){
+		BufferedImage bufImage = createBufferedImage();
+		gc.drawImage(bufImage, x, y, l, w, null);
+	}
 }
